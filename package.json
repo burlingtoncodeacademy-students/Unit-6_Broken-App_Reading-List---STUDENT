@@ -1,0 +1,19 @@
+{
+  "name": "readinglist-broken-app",
+  "version": "1.0.0",
+  "description": "a broken application to help junior developers practice debugging an express application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "upright education",
+  "license": "see license in assets/copyright_details.md",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.1",
+    "mongoose": "^7.4.0"
+  }
+}

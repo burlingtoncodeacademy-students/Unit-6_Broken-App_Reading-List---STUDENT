@@ -1,0 +1,415 @@
+{
+	"info": {
+		"_postman_id": "30ab98cb-1132-45d2-b462-49e721ca0303",
+		"name": "Reading List",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9753119"
+	},
+	"item": [
+		{
+			"name": "Reading-BrokenApp",
+			"item": [
+				{
+					"name": "New User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"two@email.com\",\r\n    \"password\": \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/user/signup",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Book",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Smoked Again\",\r\n    \"author\": \"Chuck Roast\",\r\n    \"dateRead\": \"2023-07-20\",\r\n    \"notes\": \"notes\",\r\n    \"rating\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/book",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Book Copy",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dateRead\": \"2023-05-23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/book/{{ID}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"book",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Books",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/book/all-books",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"book",
+								"all-books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "One Book",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/book/get-one/{{ID}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"book",
+								"get-one",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete One",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/book/delete-one/{{ID}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"book",
+								"delete-one",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete by Author",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/book/delete-books-by-author/{{AUTHOR}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"book",
+								"delete-books-by-author",
+								"{{AUTHOR}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "One Book by Title",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/book/by-title/book two",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"book",
+								"by-title",
+								"book two"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "One Book by Author",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/book/by-author/steph queen",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"book",
+								"by-author",
+								"steph queen"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"one@email.com\",\r\n    \"password\": \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/user/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Logan\",\r\n    \"lastName\": \"unknown\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/user/{{ID}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"{{ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/user/deleteMe",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"deleteMe"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
